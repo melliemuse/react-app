@@ -5,7 +5,7 @@ class EmployeeCard extends Component {
         return (
             <div className="card">
                 <div className="card-content">
-                    <h3>Employee: <span className="card-employeename">Brandy McClinock</span></h3>
+                    <h3>Employee: <span className="card-employeename">Conan the Barbarian</span></h3>
                 </div>
             </div>
         )
