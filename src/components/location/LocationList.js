@@ -30,4 +30,4 @@ render(){
 }
 }
 
-export default LocationList
+export default LocationsList

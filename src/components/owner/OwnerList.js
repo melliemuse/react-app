@@ -4,17 +4,17 @@ import OwnerManager from '../../modules/OwnerManager'
 
 class OwnerList extends Component {
     state = {
-        owner: [],
+        owners: [],
     }
 
 componentDidMount(){
     console.log("OWNER LIST: ComponentDidMount");
     //getAll from OwnerManager and hang on to that data; put it in state
     OwnerManager.getAll()
-    .then((owner) => {
-        console.log(owner)
+    .then((owners) => {
+        console.log(owners)
         this.setState({
-            owner: owner
+            owners: owners
         })
     })
 }

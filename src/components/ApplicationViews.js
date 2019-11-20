@@ -3,9 +3,9 @@ import React, { Component } from 'react'
 import Home from './home/Home'
 import AnimalList from './animal/AnimalList.js'
 //only include these once they are built - previous practice exercise
-import LocationCard from './location/LocationCard'
-import EmployeeCard from './employee/EmployeeCard'
-import OwnerCard from './owner/OwnerCard'
+import LocationList from './location/LocationList'
+import EmployeeList from './employee/EmployeeList'
+import OwnerList from './owner/OwnerList'
 
 
 class ApplicationViews extends Component {
@@ -21,15 +21,15 @@ class ApplicationViews extends Component {
         }} />
         <Route path="/owners" render={(props) => 
       {
-        return <OwnerCard />
+        return <OwnerList />
       }} />
       <Route path="/locations" render={(props) => 
       {
-    return <LocationCard />  
+    return <LocationList />  
     }} />
     <Route path="/employees" render={(props) => 
     {
-      return <EmployeeCard />
+      return <EmployeeList />
     }} />
       </React.Fragment>
     )

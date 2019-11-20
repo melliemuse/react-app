@@ -8,7 +8,8 @@ class LocationCard extends Component {
                 <picture>
               <img src={require('./street-scene-wellness-taipei.jpg')} alt="Street Scene Taipei" />
             </picture>
-                    <h3>Location: <span className="card-locationname">Taipei</span></h3>
+                    <h2>Location: <span className="card-locationname">{this.props.location.name}</span></h2>
+        <p>{this.props.location.address}</p>
                 </div>
             </div>
         )
