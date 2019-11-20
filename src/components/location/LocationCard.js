@@ -5,7 +5,10 @@ class LocationCard extends Component {
         return (
             <div className="card">
                 <div className="card-content">
-                    <h3>Location: <span className="card-locationname">Mt Everest</span></h3>
+                <picture>
+              <img src={require('./street-scene-wellness-taipei.jpg')} alt="Street Scene Taipei" />
+            </picture>
+                    <h3>Location: <span className="card-locationname">Taipei</span></h3>
                 </div>
             </div>
         )
