@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from "react-router-dom"
 
 class LocationCard extends Component {
     render() {
@@ -10,6 +11,7 @@ class LocationCard extends Component {
             </picture>
                     <h2>Location: <span className="card-locationname">{this.props.location.name}</span></h2>
         <p>{this.props.location.address}</p>
+        <Link to={`/locations/${this.props.location.id}`}><button>Details</button></Link>
                 </div>
             </div>
         )

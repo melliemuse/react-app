@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import LocationCard from './LocationCard'
 import LocationManager from '../../modules/LocationManager'
 
-class LocationsList extends Component {
+class LocationList extends Component {
     state = {
         locations: [],
     }
@@ -30,4 +30,4 @@ class LocationsList extends Component {
     }
 }
 
-export default LocationsList
+export default LocationList
