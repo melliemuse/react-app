@@ -27,7 +27,12 @@ class ApplicationViews extends Component {
         <Route path="/animals/:animalId(\d+)" render={(props) => {
           // Pass the animalId to the AnimalDetailComponent
           console.log(props)
-          return <AnimalDetail animalId={parseInt(props.match.params.animalId)} />
+          return <AnimalDetail animalId={parseInt(props.match.params.animalId)} 
+          // history={props.history}
+          // match={props.match}
+          // location={props.location}
+          {...props}
+          />
         }} />
 
         {/*
@@ -48,7 +53,10 @@ class ApplicationViews extends Component {
           return <LocationList />
         }} />
         <Route path="/locations/:locationId(\d+)" render={(props) => {
-          return <LocationDetail locationId={parseInt(props.match.params.locationId)}/>
+          return <LocationDetail 
+          locationId={parseInt(props.match.params.locationId)}
+          {...props}
+          />
         }} />
         <Route exact path="/employees" render={(props) => {
           return <EmployeeList />

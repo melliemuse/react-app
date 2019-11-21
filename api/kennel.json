@@ -13,6 +13,13 @@
       "breed": "German Sheperd",
       "employeeId": 1,
       "locationId": 4
+    },
+    {
+      "id": 3,
+      "name": "Brady",
+      "breed": "Weiner Dog",
+      "employeeId": 2,
+      "locationId": 2
     }
   ],
   "owners": [
@@ -21,6 +28,12 @@
       "name": "Patsy McFee",
       "phoneNumber": "615-893-2456",
       "petId": 1
+    },
+    {
+      "id": 3,
+      "name": "Unto Thyself",
+      "phoneNumber": "653-209-2182",
+      "petId": 2
     },
     {
       "id": 4,

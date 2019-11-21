@@ -7,6 +7,7 @@ class LocationDetail extends Component {
   state = {
       name: "",
       address: "",
+      loadingStatus: true
   }
 
   componentDidMount(){
@@ -16,7 +17,8 @@ class LocationDetail extends Component {
     .then((location) => {
       this.setState({
         name: location.name,
-        address: location.address
+        address: location.address,
+        loadingStatus: false
       });
     });
   }
@@ -30,6 +32,7 @@ class LocationDetail extends Component {
             </picture>
                     <h2>Location: <span className="card-locationname">{this.state.name}</span></h2>
         <p>{this.state.address}</p>
+        <button type="button" disabled={this.state.loadingStatus}>Discharge</button>
         </div>
       </div>
     );
