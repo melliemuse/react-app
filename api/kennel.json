@@ -8,18 +8,19 @@
       "locationId": 1
     },
     {
-      "id": 2,
-      "name": "Decker",
-      "breed": "German Sheperd",
-      "employeeId": 1,
-      "locationId": 4
+      "name": "Gerarld",
+      "breed": "Pooch",
+      "id": 2
     },
     {
-      "id": 3,
-      "name": "Brady",
-      "breed": "Weiner Dog",
-      "employeeId": 2,
-      "locationId": 2
+      "name": "Crow",
+      "breed": "Black Lab",
+      "id": 3
+    },
+    {
+      "name": "Hiro",
+      "breed": "Terrier",
+      "id": 4
     }
   ],
   "owners": [
@@ -40,6 +41,11 @@
       "name": "Francine Fauna",
       "phoneNumber": "029-420-0974",
       "petId": 3
+    },
+    {
+      "name": "Ford Coppola",
+      "phoneNumber": "555-6000",
+      "id": 5
     }
   ],
   "employees": [
@@ -76,9 +82,19 @@
       "name": "Aquiver"
     },
     {
-      "id": 4,
-      "address": "452 Death Valley Street",
-      "name": "Ablanc"
+      "name": "The Hippo Hangout",
+      "address": "121 W Hollywood",
+      "id": 4
+    },
+    {
+      "name": "The Virtuous Viking",
+      "address": "Armory Pike",
+      "id": 5
+    },
+    {
+      "name": "The Fanciful Fig",
+      "address": "Granada Drive",
+      "id": 6
     }
   ]
 }

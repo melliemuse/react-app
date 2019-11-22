@@ -23,7 +23,15 @@ class LocationDetail extends Component {
     });
   }
 
+  handleDelete = () => {
+    //  Has to be a fat arrow function if it's a function I define outside of a lifecycle hook otherwise this refers to the window
+      this.setState({loadingStatus: true})
+      LocationManager.delete(this.props.locationId)
+      .then(() => this.props.history.push("/locations"))
+  }
+
   render() {
+    console.log(this.state)
     return (
       <div className="card">
         <div className="card-content">
@@ -32,7 +40,7 @@ class LocationDetail extends Component {
             </picture>
                     <h2>Location: <span className="card-locationname">{this.state.name}</span></h2>
         <p>{this.state.address}</p>
-        <button type="button" disabled={this.state.loadingStatus}>Discharge</button>
+        <button type="button" disabled={this.state.loadingStatus} onClick={this.handleDelete}>Discharge</button>
         </div>
       </div>
     );
