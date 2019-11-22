@@ -36,4 +36,4 @@ class EmployeeDetail extends Component {
   }
 }
 
-export default EmployeeDetail;
+export default EmployeeDetail

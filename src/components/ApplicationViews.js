@@ -94,10 +94,17 @@ class ApplicationViews extends Component {
           />
         }} />
         <Route exact path="/employees" render={(props) => {
-          return <EmployeeList />
+          return <EmployeeList 
+          {...props}
+          />
         }} />
         <Route path="/employees/:employeeId(\d+)" render={(props) => {
           return <EmployeeDetail employeeId={parseInt(props.match.params.employeeId)} />
+        }} />
+        <Route path="/employees/new" render={(props) => {
+          return <EmployeeForm 
+          {...props}
+          />
         }} />
       </React.Fragment>
     )
