@@ -1,4 +1,5 @@
-import { Route } from 'react-router-dom'
+import Login from './auth/Login'
+import { Route, Redirect } from 'react-router-dom'
 import React, { Component } from 'react'
 import Home from './home/Home'
 import AnimalList from './animal/AnimalList.js'
@@ -14,9 +15,13 @@ import AnimalForm from './animal/AnimalForm'
 import EmployeeForm from './employee/EmployeeForm'
 import LocationForm from './location/LocationForm'
 import OwnerForm from './owner/OwnerForm'
-
+import AnimalEditForm from './animal/AnimalEditForm'
 
 class ApplicationViews extends Component {
+
+  // Check if credentials are in local storage
+  //returns true/false
+  isAuthenticated = () => localStorage.getItem("credentials") !== null
 
   render() {
     return (
@@ -25,12 +30,14 @@ class ApplicationViews extends Component {
           return <Home />
         }} />
         {/* Make sure you add the `exact` attribute here */}
-        <Route exact path="/animals" render={(props) => {
-          return <AnimalList
-            {...props}
-          />
+        <Route exact path="/animals" render={props => {
+          if (this.isAuthenticated()) {
+            return <AnimalList {...props} />
+          } else {
+            return <Redirect to="/login" />
+          }
         }} />
-        <Route path="/animals/:animalId(\d+)" render={(props) => {
+        <Route exact path="/animals/:animalId(\d+)" render={(props) => {
           // Pass the animalId to the AnimalDetailComponent
           console.log(props)
           return <AnimalDetail animalId={parseInt(props.match.params.animalId)}
@@ -43,6 +50,12 @@ class ApplicationViews extends Component {
         <Route path="/animals/new" render={(props) => {
           return <AnimalForm {...props} />
         }} />
+        <Route
+          path="/animals/:animalId(\d+)/edit" render={props => {
+            return <AnimalEditForm {...props} />
+          }}
+        />
+        <Route path="/login" component={Login} />
         {/*
   This is a new route to handle a URL with the following pattern:
   http://localhost:3000/animals/1
@@ -65,8 +78,8 @@ class ApplicationViews extends Component {
           />
         }} />
         <Route exact path="/locations" render={(props) => {
-          return <LocationList 
-          {...props}
+          return <LocationList
+            {...props}
           />
         }} />
         <Route path="/locations/:locationId(\d+)" render={(props) => {
@@ -75,12 +88,12 @@ class ApplicationViews extends Component {
             {...props}
           />
         }} />
-            <Route path="/locations/new" render={(props) => {
+        <Route path="/locations/new" render={(props) => {
           return <LocationForm
             {...props}
           />
         }} />
-            <Route exact path="/employees" render={(props) => {
+        <Route exact path="/employees" render={(props) => {
           return <EmployeeList />
         }} />
         <Route path="/employees/:employeeId(\d+)" render={(props) => {

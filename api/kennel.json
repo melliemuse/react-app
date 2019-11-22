@@ -3,19 +3,17 @@
     {
       "id": 1,
       "name": "Doodles",
-      "breed": "Poodle",
-      "employeeId": 3,
-      "locationId": 1
+      "breed": "Poodle"
     },
     {
+      "id": 2,
       "name": "Gerarld",
-      "breed": "Pooch",
-      "id": 2
+      "breed": "Pooch"
     },
     {
-      "name": "Crow",
-      "breed": "Black Lab",
-      "id": 3
+      "id": 3,
+      "name": "Crow T. Dogbutt",
+      "breed": "Black Lab"
     },
     {
       "name": "Hiro",
