@@ -65,9 +65,13 @@ class ApplicationViews extends Component {
   http://localhost:3000/animals/jack
 */}
         <Route exact path="/owners" render={(props) => {
-          return <OwnerList
-            {...props}
-          />
+          if (this.isAuthenticated()) {
+            return <OwnerList
+              {...props}
+            />
+          } else {
+            return <Redirect to="/login" />
+          }
         }} />
         <Route path="/owners/:ownerId(\d+)" render={(props) => {
           return <OwnerDetail ownerId={parseInt(props.match.params.ownerId)} />
@@ -78,9 +82,13 @@ class ApplicationViews extends Component {
           />
         }} />
         <Route exact path="/locations" render={(props) => {
-          return <LocationList
-            {...props}
-          />
+          if (this.isAuthenticated()) {
+            return <LocationList
+              {...props}
+            />
+          } else {
+            return <Redirect to="/login" />
+          }
         }} />
         <Route path="/locations/:locationId(\d+)" render={(props) => {
           return <LocationDetail
@@ -94,9 +102,11 @@ class ApplicationViews extends Component {
           />
         }} />
         <Route exact path="/employees" render={(props) => {
-          return <EmployeeList 
-          {...props}
-          />
+          if (this.isAuthenticated()) {
+            return <EmployeeList {...props} />
+          } else {
+              return <Redirect to="/login" />
+            }
         }} />
         <Route path="/employees/:employeeId(\d+)" render={(props) => {
           return <EmployeeDetail employeeId={parseInt(props.match.params.employeeId)} />
