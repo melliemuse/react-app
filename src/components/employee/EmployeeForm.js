@@ -2,16 +2,16 @@ import React, { Component } from 'react'
 import EmployeeManager from '../../modules/EmployeeManager'
 
 class EmployeeForm extends Component {
-    state= {
+    state = {
         employeeName: "",
         employeePhoneNumber: "",
         loadingStatus: false
     }
 
     handleFieldChange = event => {
-        const toChange = {}
-        toChange[event.target.id] = event.target.value
-        this.setState(toChange)
+        const stateToChange = {}
+        stateToChange[event.target.id] = event.target.value
+        this.setState(stateToChange)
     }
 
     createNewEmployee = event => {
@@ -24,38 +24,39 @@ class EmployeeForm extends Component {
                 phoneNumber: this.state.employeePhoneNumber
             }
             EmployeeManager.post(employee)
-            .then(this.props.history.push("/employees"))
+                .then(() => this.props.history.push("/employees"))
         }
     }
 
     render() {
         return (
             <>
-            <form>
-                <fieldset>
-                    <div className="formgrid">
-                    <label htmlFor="employeeName">Employee Name</label>
-                    <input 
-                    id="employeeName"
-                    onChange={this.handleFieldChange}
-                    placeholder="Employee Name"
-                    />
-                    <label htmlFor="employeePhoneNumber">Employee Phone Number</label>
-                    <input 
-                    id="employeePhoneNumber"
-                    onChange={this.handleFieldChange}
-                    placeholder="Employee Phone Number"
-                    />
-                    </div>
-                <div className="alignRight">
-                    <button
-                    onClick={this.createNewEmployee}
-                    >
-                        Submit
+                <form>
+                    <fieldset>
+                        <div className="formgrid">
+                            <label htmlFor="employeeName">Employee Name</label>
+                            <input
+                                id="employeeName"
+                                onChange={this.handleFieldChange}
+                                placeholder="Employee Name"
+                            />
+                            <label htmlFor="employeePhoneNumber">Employee Phone Number</label>
+                            <input
+                                id="employeePhoneNumber"
+                                onChange={this.handleFieldChange}
+                                placeholder="Employee Phone Number"
+                            />
+                        </div>
+                        <div className="alignRight">
+                            <button
+                                onClick={this.createNewEmployee}
+                                disabled={this.loadingStatus}
+                            >
+                                Submit
                     </button>
-                </div>
-                </fieldset>
-            </form>
+                        </div>
+                    </fieldset>
+                </form>
             </>
         )
     }

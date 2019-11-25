@@ -37,7 +37,7 @@ render(){
 
     return(
         <>
-        <section>
+        <section className="section-content">
             <button 
             className="btn"
             onClick={() => (this.props.history.push("employees/new"))}
@@ -50,7 +50,8 @@ render(){
             <EmployeeCard 
             key={employee.id} 
             employee={employee} 
-            deleteEmployee={this.deleteEmployee} 
+            deleteEmployee={this.deleteEmployee}
+            {...this.props} 
             />
             )}
             </div>

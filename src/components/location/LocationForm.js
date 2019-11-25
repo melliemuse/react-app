@@ -35,6 +35,7 @@ class LocationForm extends Component {
             <>
                 <form>
                     <fieldset>
+                        <div className="formgrid">
                         <label 
                         htmlFor="locationName">
                             Location Name
@@ -44,9 +45,6 @@ class LocationForm extends Component {
                             placeholder="Location Name"
                             onChange={this.handleFieldChange}
                         />
-
-                    </fieldset>
-                    <fieldset>
                         <label 
                         htmlFor="locationAddress">
                             Location Address
@@ -56,6 +54,7 @@ class LocationForm extends Component {
                             placeholder="Location Address"
                             onChange={this.handleFieldChange}
                         />
+                        </div>
                 <div className="alignRight">
                     <button
                         type="button"

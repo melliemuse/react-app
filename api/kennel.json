@@ -7,7 +7,7 @@
     },
     {
       "id": 2,
-      "name": "Gerarld",
+      "name": "Gerald",
       "breed": "Pooch"
     },
     {
@@ -61,6 +61,26 @@
       "id": 4,
       "name": "Halli",
       "phoneNumber": "842-572-4235"
+    },
+    {
+      "id": 5,
+      "name": "The Rhymenocerous",
+      "phoneNumber": "123-234-5319"
+    },
+    {
+      "id": 6,
+      "name": "Rhinocerous",
+      "phoneNumber": "1800-Get-Rhinos"
+    },
+    {
+      "id": 7,
+      "name": "Jack Skellington",
+      "phoneNumber": "444-444-667"
+    },
+    {
+      "name": "Mashugannah",
+      "phoneNumber": "513-987-4259",
+      "id": 8
     }
   ],
   "locations": [
