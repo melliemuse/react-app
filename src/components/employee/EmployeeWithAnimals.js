@@ -19,7 +19,7 @@ class EmployeeWithAnimals extends Component {
             })
         })
     }
-
+ 
     deleteAnimal = id => {
         AnimalManager.delete(id)
           .then(() => {
@@ -33,6 +33,7 @@ class EmployeeWithAnimals extends Component {
       }
 
     render(){
+        console.log(this.state.employee.name)
         return (
           <div className="card">
             <p>Employee: {this.state.employee.name}</p>
