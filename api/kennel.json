@@ -13,21 +13,9 @@
       "employeeId": 5
     },
     {
-      "id": 3,
-      "name": "Crow T. Dogbutt",
-      "breed": "Black Lab",
-      "employeeId": 4
-    },
-    {
-      "name": "Hiro",
-      "breed": "Terrier",
-      "id": 4,
-      "employeeId": 2
-    },
-    {
       "name": "Persephone",
       "breed": "Maltese",
-      "id": 4,
+      "id": 5,
       "employeeId": 1
     }
   ],
@@ -60,37 +48,44 @@
     {
       "id": 1,
       "name": "Rambo",
-      "phoneNumber": "222-222-2222"
+      "phoneNumber": "222-222-2222",
+      "locationId": 1
     },
     {
       "id": 3,
       "name": "Bloke",
-      "phoneNumber": "000-000-0000"
+      "phoneNumber": "000-000-0000",
+      "locationId": 3
     },
     {
       "id": 4,
       "name": "Halli",
-      "phoneNumber": "842-572-4235"
+      "phoneNumber": "842-572-4235",
+      "locationId": 2
     },
     {
       "id": 5,
       "name": "The Rhymenocerous",
-      "phoneNumber": "123-234-5319"
+      "phoneNumber": "123-234-5319",
+      "locationId": 6
     },
     {
       "id": 6,
       "name": "Rhinocerous",
-      "phoneNumber": "1800-Get-Rhinos"
+      "phoneNumber": "1800-Get-Rhinos",
+      "locationId": 5
     },
     {
       "id": 7,
       "name": "Jack Skellington",
-      "phoneNumber": "444-444-667"
+      "phoneNumber": "444-444-667",
+      "locationId": 4
     },
     {
       "name": "Mashugannah",
       "phoneNumber": "513-987-4259",
-      "id": 8
+      "id": 8,
+      "locationId": 4
     }
   ],
   "locations": [
