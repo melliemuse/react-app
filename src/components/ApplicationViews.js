@@ -16,6 +16,7 @@ import LocationForm from './location/LocationForm'
 import OwnerForm from './owner/OwnerForm'
 import AnimalEditForm from './animal/AnimalEditForm'
 import EmployeeEditForm from './employee/EmployeeEditForm'
+import EmployeeWithAnimals from './employee/EmployeeWithAnimals'
 
 class ApplicationViews extends Component {
 
@@ -110,6 +111,9 @@ class ApplicationViews extends Component {
           return <EmployeeForm 
           {...props}
           />
+        }} />
+          <Route path="/employees/:employeeId(\d+)/details" render={(props) => {
+            return <EmployeeWithAnimals {...props} />
         }} />
         <Route path="/employees/:employeeId(\d+)/edit" render={(props) => {
           return <EmployeeEditForm {...props} 
