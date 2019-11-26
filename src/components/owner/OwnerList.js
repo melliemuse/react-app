@@ -12,7 +12,6 @@ class OwnerList extends Component {
         //getAll from OwnerManager and hang on to that data; put it in state
         OwnerManager.getAll()
             .then((owners) => {
-                console.log(owners)
                 this.setState({
                     owners: owners
                 })
@@ -32,8 +31,6 @@ class OwnerList extends Component {
     }
 
     render() {
-        console.log("this.props", this.props);
-
         return (
             <>
                 <section className="section-content">

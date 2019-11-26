@@ -10,36 +10,28 @@
       "id": 2,
       "name": "Gerald",
       "breed": "Pooch",
-      "employeeId": 5
+      "employeeId": 7
     },
     {
+      "id": 5,
       "name": "Persephone",
       "breed": "Maltese",
-      "id": 5,
-      "employeeId": 1
+      "employeeId": 7
     }
   ],
   "owners": [
     {
-      "id": 1,
-      "name": "Patsy McFee",
-      "phoneNumber": "615-893-2456",
-      "petId": 1
-    },
-    {
-      "id": 3,
-      "name": "Unto Thyself",
+      "name": "The Bard",
       "phoneNumber": "653-209-2182",
-      "petId": 2
+      "id": 3
     },
     {
-      "id": 4,
-      "name": "Francine Fauna",
+      "name": "Fancy Francine",
       "phoneNumber": "029-420-0974",
-      "petId": 3
+      "id": 4
     },
     {
-      "name": "Ford Coppola",
+      "name": "Frances Ford Coppola",
       "phoneNumber": "555-6000",
       "id": 5
     }

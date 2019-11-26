@@ -43,7 +43,6 @@ class LocationsEditForm extends Component {
 
     render() {
         console.log("state", this.state)
-        console.log("props", this.props)
         return (
             <>
                 <form>

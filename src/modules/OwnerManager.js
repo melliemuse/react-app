@@ -17,9 +17,18 @@ export default {
         return fetch(`${remoteURL}/owners`, {
             method: "POST",
             headers: {
-                "Content-type": "application/json"
+                "Content-Type": "application/json"
             },
             body: JSON.stringify(newOwner)
+        }).then(data => data.json())
+    },
+    updateOwner(ownerToUpdate) {
+        return fetch(`${remoteURL}/owners/${ownerToUpdate.id}`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(ownerToUpdate)
         }).then(data => data.json())
     }
 }
