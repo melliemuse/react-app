@@ -26,7 +26,7 @@ class EmployeeEditForm extends Component {
                 phoneNumber: this.state.employeePhoneNumber,
             }
             EmployeeManager.update(employee)
-            .then(this.props.history.push("/employees"))
+            .then(() => this.props.history.push("/employees"))
         }
     }
 

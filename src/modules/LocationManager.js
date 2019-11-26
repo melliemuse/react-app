@@ -5,7 +5,7 @@ export default {
         return fetch(`${remoteURL}/locations/${id}`).then(results => results.json())
     },
     getWithEmployees(id) {
-        return fetch(`${remoteURL}/locations/${id}/?_embed=employees`).then(results=> results.json())
+        return fetch(`${remoteURL}/locations/${id}/?_embed=employees`).then(results => results.json())
     },
     getAll() {
         return fetch(`${remoteURL}/locations`).then(results => results.json())
@@ -25,5 +25,15 @@ export default {
             },
             body: JSON.stringify(newLocation)
         }).then(data => data.json())
-}
+    },
+    updateLocation(locationToUpdate) {
+        console.log(locationToUpdate)
+        return fetch(`${remoteURL}/locations/${locationToUpdate.id}`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(locationToUpdate)
+        }).then(data => data.json)
+    }
 }

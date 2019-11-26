@@ -59,9 +59,8 @@
     },
     {
       "id": 4,
-      "name": "Halli",
-      "phoneNumber": "842-572-4235",
-      "locationId": 2
+      "name": "Halli Berri",
+      "phoneNumber": "842-572-4235"
     },
     {
       "id": 5,
@@ -71,9 +70,8 @@
     },
     {
       "id": 6,
-      "name": "Rhinocerous",
-      "phoneNumber": "1800-Get-Rhinos",
-      "locationId": 5
+      "name": "Freddie",
+      "phoneNumber": "1800-Get-Rhinos"
     },
     {
       "id": 7,
@@ -96,13 +94,13 @@
     },
     {
       "id": 2,
-      "address": "5555 Songbird Way",
-      "name": "Ride or Die"
+      "name": "Ride or Die Trying",
+      "address": "5555 Songbird Way"
     },
     {
       "id": 3,
-      "address": "223 Yellow River Drive",
-      "name": "Aquiver"
+      "name": "Aquiver Me Timbers",
+      "address": "223 Yellow River Drive"
     },
     {
       "name": "The Hippo Hangout",
@@ -115,9 +113,9 @@
       "id": 5
     },
     {
+      "id": 6,
       "name": "The Fanciful Fig",
-      "address": "Granada Drive",
-      "id": 6
+      "address": "Granada Drive"
     }
   ]
 }

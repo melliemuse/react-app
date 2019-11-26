@@ -8,6 +8,7 @@ class OwnerCard extends Component {
                 <div className="card-content">
                     <h3>Owner: <span className="ownername">{this.props.owner.name} 
                         </span></h3>
+                        <button onClick={() => this.props.history.push(`/owners/${this.props.owner.id}/edit`)}>Edit</button>
                         <button type="button" onClick={() => this.props.deleteOwner(this.props.owner.id)}>Discharge</button>
                         <Link to={`owners/${this.props.owner.id}`}><button>Details</button></Link>
                 </div>

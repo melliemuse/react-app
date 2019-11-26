@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import LocationManager from '../../modules/LocationManager'
 
 class LocationsEditForm extends Component {
     state = {
@@ -8,7 +9,7 @@ class LocationsEditForm extends Component {
     }
 
     handleFieldChange = event => {
-        stateToChange = {}
+        const stateToChange = {}
         stateToChange[event.target.id] = event.target.value
         this.setState(stateToChange)
     }
@@ -20,39 +21,60 @@ class LocationsEditForm extends Component {
             event.preventDefault()
             this.setState({loadingStatus: true})
             const location = {
+                id: this.props.match.params.locationId,
                 name: this.state.locationName,
                 address: this.state.address
             }
+            LocationManager.updateLocation(location)
+            .then(() => this.props.history.push("/locations"))
         }
     }
 
 
     componentDidMount() {
-
+        LocationManager.get(this.props.match.params.locationId)
+        .then(location => {
+            this.setState({
+                locationName: location.name,
+                address: location.address
+            })
+        })
     }
 
     render() {
+        console.log("state", this.state)
+        console.log("props", this.props)
         return (
             <>
                 <form>
                     <fieldset>
-                        <div>
-                            <label>
-
+                        <div className="formgrid">
+                            <label htmlFor="locationName">
+                            Location Name
                             </label>
                             <input
-
+                                type="text"
+                                required
+                                id="locationName"
+                                value={this.state.locationName}
+                                onChange={this.handleFieldChange}
                             />
                             <label>
-
+                                Location Address
                             </label>
                             <input
-
+                                type="text"
+                                required
+                                id="locationAddress"
+                                value={this.state.address}
+                                onChange={this.handleFieldChange}
                             />
                         </div>
                         <div>
-                            <button>
-
+                            <button
+                                onClick={this.updateExistingLocation}
+                            >
+                                Submit
                             </button>
                         </div>
                     </fieldset>
@@ -61,3 +83,5 @@ class LocationsEditForm extends Component {
         )
     }
 }
+
+export default LocationsEditForm

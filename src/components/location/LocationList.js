@@ -33,7 +33,6 @@ class LocationList extends Component {
 
     render() {
         console.log("LOCATION LIST: Render");
-
         return (
             <>
             <section>
@@ -44,11 +43,10 @@ class LocationList extends Component {
                     Create New Location</button>
             </section>
             <div className="container-cards">
-                {this.state.locations.map(location => 
-                <LocationCard 
-                key={location.id} 
-                location={location} 
-                deleteLocation={this.deleteLocation}
+                {this.state.locations.map(location => <LocationCard 
+                 {...this.props}
+                key={location.id} locationQ={location} deleteLocation={this.deleteLocation} 
+               
                 />)}
             </div>
             </>
