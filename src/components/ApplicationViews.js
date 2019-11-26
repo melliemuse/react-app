@@ -25,7 +25,7 @@ class ApplicationViews extends Component {
 
   // Check if credentials are in local storage
   //returns true/false
-  isAuthenticated = () => localStorage.getItem("credentials") !== null
+  // isAuthenticated = () => localStorage.getItem("credentials") !== null
 
   render() {
     return (
@@ -35,7 +35,7 @@ class ApplicationViews extends Component {
         }} />
         {/* Make sure you add the `exact` attribute here */}
         <Route exact path="/animals" render={props => {
-          if (this.isAuthenticated()) {
+          if (this.props.user) {
             return <AnimalList {...props} />
           } else {
             return <Redirect to="/login" />
@@ -54,7 +54,9 @@ class ApplicationViews extends Component {
             return <AnimalEditForm {...props} />
           }}
         />
-        <Route path="/login" component={Login} />
+        <Route path="/login" render={props => {
+          return <Login setUser={this.props.setUser} {...props}/>
+        }} />
         {/*
   This is a new route to handle a URL with the following pattern:
   http://localhost:3000/animals/1
@@ -64,7 +66,7 @@ class ApplicationViews extends Component {
   http://localhost:3000/animals/jack
 */}
         <Route exact path="/owners" render={(props) => {
-          if (this.isAuthenticated()) {
+          if (this.props.user) {
             return <OwnerList
               {...props}
             />
@@ -85,7 +87,7 @@ class ApplicationViews extends Component {
           />
         }} />
         <Route exact path="/locations" render={(props) => {
-          if (this.isAuthenticated()) {
+          if (this.props.user) {
             return <LocationList
               {...props}
             />
@@ -112,7 +114,7 @@ class ApplicationViews extends Component {
           />
         }} />
         <Route exact path="/employees" render={(props) => {
-          if (this.isAuthenticated()) {
+          if (this.props.user) {
             return <EmployeeList {...props} />
           } else {
               return <Redirect to="/login" />
