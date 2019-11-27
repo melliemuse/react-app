@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import LocationManager from '../../modules/LocationManager';
+import APIManager from '../../modules/APIManager';
 import './LocationDetail.css'
 
 class LocationDetail extends Component {
@@ -12,8 +12,8 @@ class LocationDetail extends Component {
 
   componentDidMount(){
     console.log("LocationDetail: ComponentDidMount");
-    //get(id) from LocationManager and hang on to the data; put it into state
-    LocationManager.get(this.props.locationId)
+    //get(id) from APIManager and hang on to the data; put it into state
+    APIManager.get("locations", this.props.locationId)
     .then((location) => {
       this.setState({
         name: location.name,
@@ -26,7 +26,7 @@ class LocationDetail extends Component {
   handleDelete = () => {
     //  Has to be a fat arrow function if it's a function I define outside of a lifecycle hook otherwise this refers to the window
       this.setState({loadingStatus: true})
-      LocationManager.delete(this.props.locationId)
+      APIManager.delete("locations", this.props.locationId)
       .then(() => this.props.history.push("/locations"))
   }
 

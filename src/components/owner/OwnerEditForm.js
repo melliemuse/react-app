@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import OwnerManager from '../../modules/OwnerManager'
+import APIManager from '../../modules/APIManager'
 
 class OwnerEditForm extends Component {
     state = {
@@ -22,12 +22,12 @@ class OwnerEditForm extends Component {
             phoneNumber: this.state.ownerPhoneNumber,
             id: this.props.match.params.ownerId
         }
-        OwnerManager.updateOwner(owner)
+        APIManager.update("owners", owner)
             .then(() => this.props.history.push("/owners"))
     }
 
     componentDidMount() {
-        OwnerManager.get(this.props.match.params.ownerId)
+        APIManager.get("owners", this.props.match.params.ownerId)
             .then(owners => {
                 this.setState({
                     ownerName: owners.name,
@@ -37,8 +37,8 @@ class OwnerEditForm extends Component {
     }
 
     render() {
-        console.log("state", this.state)
-        console.log("props", this.props)
+        // console.log("state", this.state)
+        // console.log("props", this.props)
         return (
             <>
                 <form>

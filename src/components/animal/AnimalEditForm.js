@@ -1,6 +1,5 @@
 import React, { Component } from "react"
-import AnimalManager from "../../modules/AnimalManager"
-import EmployeeManager from '../../modules/EmployeeManager'
+import APIManager from "../../modules/APIManager"
 import "./AnimalForm.css"
 
 class AnimalEditForm extends Component {
@@ -29,12 +28,12 @@ class AnimalEditForm extends Component {
       employeeId: Number(this.state.employeeId)
     };
 
-    AnimalManager.update(editedAnimal)
+    APIManager.update("animals", editedAnimal)
       .then(() => this.props.history.push("/animals"))
   }
 
   componentDidMount() {
-    AnimalManager.get(this.props.match.params.animalId)
+    APIManager.get("animals", this.props.match.params.animalId)
       .then(animal => {
         this.setState({
           animalName: animal.name,
@@ -44,7 +43,7 @@ class AnimalEditForm extends Component {
         });
       });
 
-      EmployeeManager.getAll()
+      APIManager.getAll("employees")
         .then(employees => this.setState({employees: employees}))
   }
 

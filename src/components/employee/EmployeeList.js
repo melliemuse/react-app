@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import EmployeeCard from './EmployeeCard'
-import EmployeeManager from '../../modules/EmployeeManager'
+import APIManager from '../../modules/APIManager'
 
 class EmployeeList extends Component {
     state = {
@@ -9,8 +9,8 @@ class EmployeeList extends Component {
 
 componentDidMount(){
     console.log("EMPLOYEE LIST: ComponentDidMount");
-    //getAll from EmployeeManager and hang on to that data; put it in state
-    EmployeeManager.getAll()
+    //getAll from APIManager and hang on to that data; put it in state
+    APIManager.getAll("employees")
     .then((employees) => {
         console.log(employees)
         this.setState({
@@ -19,10 +19,10 @@ componentDidMount(){
     })
 }
 
-deleteEmployee = id => {
-    EmployeeManager.delete(id)
+deleteEmployee = (module, id) => {
+    APIManager.delete("employees", id)
     .then(() => {
-      EmployeeManager.getAll()
+      APIManager.getAll("employees")
       .then((newEmployees) => {
         this.setState({
             employees: newEmployees

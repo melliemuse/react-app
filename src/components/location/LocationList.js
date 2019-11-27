@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import LocationCard from './LocationCard'
-import LocationManager from '../../modules/LocationManager'
+import APIManager from '../../modules/APIManager'
 
 class LocationList extends Component {
     state = {
@@ -9,8 +9,8 @@ class LocationList extends Component {
 
     componentDidMount() {
         console.log("LOCATION LIST: ComponentDidMount");
-        //getAll from LocationManager and hang on to that data; put it in state
-        LocationManager.getAll()
+        //getAll from APIManager and hang on to that data; put it in state
+        APIManager.getAll("locations")
             .then((locations) => {
                 console.log(locations)
                 this.setState({
@@ -19,10 +19,10 @@ class LocationList extends Component {
             })
     }
 
-    deleteLocation = (id) => {
-        LocationManager.delete(id)
+    deleteLocation = (module, id) => {
+        APIManager.delete("locations", id)
         .then(() => {
-            LocationManager.getAll()
+            APIManager.getAll("locations")
             .then((newLocations) => {
                 this.setState({
                     locations: newLocations

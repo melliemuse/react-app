@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Link } from "react-router-dom"
 
 class EmployeeCard extends Component {
-    render() {
+    render() {  
         return (
             <div className="card">
                 <div className="card-content">
@@ -10,7 +10,7 @@ class EmployeeCard extends Component {
                     <h2>Employee: <span className="card-employeename">{this.props.employee.name}</span></h2>
                     <p>Phone Number: {this.props.employee.phoneNumber}</p>
                     <button type="button" onClick={() => this.props.history.push(`/employees/${this.props.employee.id}/edit`)}>Edit</button>
-                    <button type="button" onClick={() => this.props.deleteEmployee(this.props.employee.id)}>Discharge</button>
+                    <button type="button" onClick={() => this.props.deleteEmployee("employees", this.props.employee.id)}>Discharge</button>
                     <Link to={`employees/${this.props.employee.id}/details`}><button>Details</button></Link>
                 </div>
             </div>

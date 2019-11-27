@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import EmployeeManager from '../../modules/EmployeeManager';
+import APIManager from '../../modules/APIManager';
 import './EmployeeDetail.css'
 
 class EmployeeDetail extends Component {
@@ -11,8 +11,8 @@ class EmployeeDetail extends Component {
 
   componentDidMount(){
     console.log("EmployeeDetail: ComponentDidMount");
-    //get(id) from EmployeeManager and hang on to the data; put it into state
-    EmployeeManager.get(this.props.employeeId)
+    //get(id) from APIManager and hang on to the data; put it into state
+    APIManager.get("employees", this.props.employeeId)
     .then((employee) => {
       this.setState({
         name: employee.name,

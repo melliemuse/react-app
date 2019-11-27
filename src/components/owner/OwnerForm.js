@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import OwnerManager from '../../modules/OwnerManager'
+import APIManager from '../../modules/APIManager'
 
 class OwnerForm extends Component {
     state = {
@@ -25,7 +25,7 @@ class OwnerForm extends Component {
                 phoneNumber: this.state.phoneNumber
             }
 
-            OwnerManager.post(owner)
+            APIManager.post("owners", owner)
             .then(() => this.props.history.push("/owners"))
         }
     }

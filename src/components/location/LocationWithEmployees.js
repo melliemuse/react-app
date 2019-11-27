@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import EmployeeCard from '../employee/EmployeeCard'
-import LocationManager from '../../modules/LocationManager'
+import APIManager from '../../modules/APIManager'
 
 class LocationWithEmployees extends Component {
     state = {
@@ -10,7 +10,7 @@ class LocationWithEmployees extends Component {
     
     componentDidMount() {
         console.log(this.props.match.params.locationId)
-        LocationManager.getWithEmployees(this.props.match.params.locationId)
+        APIManager.getWith("locations", this.props.match.params.locationId, "employees")
         .then((results) => {
             console.log(results)
             console.log(results.employees)

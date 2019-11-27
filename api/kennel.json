@@ -8,18 +8,46 @@
     },
     {
       "id": 2,
-      "name": "Gerald",
+      "name": "Geraldine",
       "breed": "Pooch",
-      "employeeId": 7
+      "employeeId": 4
     },
     {
       "id": 5,
       "name": "Persephone",
-      "breed": "Maltese",
+      "breed": "Cocker Spaniel",
       "employeeId": 7
+    },
+    {
+      "id": 7,
+      "name": "Dumbo",
+      "breed": "Elephant",
+      "employeeId": 1
+    },
+    {
+      "id": 8,
+      "name": "Henry",
+      "breed": "Unicycling Giraffe",
+      "employeeId": 3
+    },
+    {
+      "name": "Samuel",
+      "breed": "Pony",
+      "id": 10
+    },
+    {
+      "name": "Bojack Horseman",
+      "breed": "Horse",
+      "id": 11
     }
   ],
   "owners": [
+    {
+      "id": 1,
+      "name": "Patsy McFee",
+      "phoneNumber": "615-893-2456",
+      "petId": 1
+    },
     {
       "name": "The Bard",
       "phoneNumber": "653-209-2182",
@@ -27,7 +55,7 @@
     },
     {
       "name": "Fancy Francine",
-      "phoneNumber": "029-420-0974",
+      "phoneNumber": "029-420-0977",
       "id": 4
     },
     {
@@ -68,14 +96,12 @@
     {
       "id": 7,
       "name": "Jack Skellington",
-      "phoneNumber": "444-444-667",
-      "locationId": 4
+      "phoneNumber": "444-444-6678"
     },
     {
-      "name": "Mashugannah",
+      "name": "Geranamo",
       "phoneNumber": "513-987-4259",
-      "id": 8,
-      "locationId": 4
+      "id": 8
     }
   ],
   "locations": [
@@ -86,18 +112,18 @@
     },
     {
       "id": 2,
-      "name": "Ride or Die Trying",
+      "name": "Ride or Die ",
       "address": "5555 Songbird Way"
     },
     {
       "id": 3,
-      "name": "Aquiver Me Timbers",
+      "name": "Aquiver ",
       "address": "223 Yellow River Drive"
     },
     {
-      "name": "The Hippo Hangout",
-      "address": "121 W Hollywood",
-      "id": 4
+      "id": 4,
+      "name": "Hippo Hangout",
+      "address": "121 W Hollywood"
     },
     {
       "name": "The Virtuous Viking",
@@ -108,6 +134,11 @@
       "id": 6,
       "name": "The Fanciful Fig",
       "address": "Granada Drive"
+    },
+    {
+      "id": 7,
+      "name": "Solemn Staircase",
+      "address": "347 Thoroughwood Turnpike"
     }
   ]
 }

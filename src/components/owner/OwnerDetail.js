@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import OwnerManager from '../../modules/OwnerManager';
+import APIManager from '../../modules/APIManager';
 import './OwnerDetail.css'
 
 class OwnerDetail extends Component {
@@ -11,8 +11,8 @@ class OwnerDetail extends Component {
 
   componentDidMount(){
     console.log("OwnerDetail: ComponentDidMount");
-    //get(id) from OwnerManager and hang on to the data; put it into state
-    OwnerManager.get(this.props.ownerId)
+    //get(id) from APIManager and hang on to the data; put it into state
+    APIManager.get("owners", this.props.ownerId)
     .then((owner) => {
       this.setState({
         name: owner.name,

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import LocationManager from '../../modules/LocationManager'
+import APIManager from '../../modules/APIManager'
 
 class LocationForm extends Component {
     state = {
@@ -25,7 +25,7 @@ class LocationForm extends Component {
                 address: this.state.locationAddress
             }
 
-            LocationManager.post(location)
+            APIManager.post("locations", location)
                 .then(() => this.props.history.push("/locations"))
         }
     }

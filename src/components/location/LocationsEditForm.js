@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import LocationManager from '../../modules/LocationManager'
+import APIManager from '../../modules/APIManager'
 
 class LocationsEditForm extends Component {
     state = {
@@ -25,14 +25,14 @@ class LocationsEditForm extends Component {
                 name: this.state.locationName,
                 address: this.state.address
             }
-            LocationManager.updateLocation(location)
+            APIManager.update("locations", location)
             .then(() => this.props.history.push("/locations"))
         }
     }
 
 
     componentDidMount() {
-        LocationManager.get(this.props.match.params.locationId)
+        APIManager.get("locations", this.props.match.params.locationId)
         .then(location => {
             this.setState({
                 locationName: location.name,
