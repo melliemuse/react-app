@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
-import EmployeeManager from '../../modules/EmployeeManager'
+import APIManager from '../../modules/APIManager'
 
 class EmployeeForm extends Component {
     state = {
         employeeName: "",
         employeePhoneNumber: "",
+        locationId: "",
+        locations: [],
         loadingStatus: false
     }
 
@@ -15,20 +17,33 @@ class EmployeeForm extends Component {
     }
 
     createNewEmployee = event => {
+        console.log("state", this.state)
         if (this.state.employeeName === "" || this.state.employeePhoneNumber === "") {
             window.alert("Please complete all fields before hitting submit")
         } else {
             event.preventDefault()
             const employee = {
                 name: this.state.employeeName,
-                phoneNumber: this.state.employeePhoneNumber
+                phoneNumber: this.state.employeePhoneNumber,
+                locationId: Number(this.state.locationId)
             }
-            EmployeeManager.post(employee)
+            console.log("employee", employee)
+            APIManager.post("employees", employee)
                 .then(() => this.props.history.push("/employees"))
         }
     }
 
+    componentDidMount() {
+        APIManager.getAll("locations")
+        .then(locations => {
+            this.setState({
+                locations: locations
+            })
+        })
+    }
+
     render() {
+        console.log("locations", this.state.locations)
         return (
             <>
                 <form>
@@ -46,6 +61,15 @@ class EmployeeForm extends Component {
                                 onChange={this.handleFieldChange}
                                 placeholder="Employee Phone Number"
                             />
+                            <select
+                            className="form-control"
+                            id="locationId"
+                            onChange={this.handleFieldChange}
+                            >
+                                {this.state.locations.map(location => 
+                                <option key={location.id} value={location.id}>{location.name}</option>
+                                )}
+                            </select>
                         </div>
                         <div className="alignRight">
                             <button

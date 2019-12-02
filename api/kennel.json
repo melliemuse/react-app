@@ -4,7 +4,7 @@
       "id": 1,
       "name": "Doodles",
       "breed": "Poodle",
-      "employeeId": 5
+      "employeeId": 1
     },
     {
       "id": 2,
@@ -43,10 +43,16 @@
       "employeeId": 8
     },
     {
-      "name": "Dogsnout Wonderpooch",
-      "breed": "Terrier Beagle Mix",
-      "employeeId": "Jack Skellington",
+      "name": "Geraldine",
+      "breed": "Pooch",
+      "employeeId": 4,
       "id": 12
+    },
+    {
+      "name": "Dory",
+      "breed": "Fish",
+      "employeeId": 9,
+      "id": 13
     }
   ],
   "owners": [
@@ -81,35 +87,69 @@
     },
     {
       "id": 3,
-      "name": "Bloke",
+      "name": "Blake",
       "phoneNumber": "000-000-0000",
-      "locationId": 3
+      "locationId": 6
     },
     {
       "id": 4,
       "name": "Halli Berri",
-      "phoneNumber": "842-572-4235"
+      "phoneNumber": "842-572-4235",
+      "locationId": 4
     },
     {
       "id": 5,
       "name": "The Rhymenocerous",
       "phoneNumber": "123-234-5319",
-      "locationId": 6
+      "locationId": 5
     },
     {
       "id": 6,
       "name": "Freddie",
-      "phoneNumber": "1800-Get-Rhinos"
+      "phoneNumber": "1800-Get-Rhinos",
+      "locationId": 2
     },
     {
       "id": 7,
       "name": "Jack Skellington",
-      "phoneNumber": "444-444-6678"
+      "phoneNumber": "444-444-6678",
+      "locationId": 7
     },
     {
-      "name": "Geranamo",
+      "id": 8,
+      "name": "Prince",
       "phoneNumber": "513-987-4259",
-      "id": 8
+      "locationId": 6
+    },
+    {
+      "name": "Leroy Jenkins",
+      "phoneNumber": "847-995-5545",
+      "id": 9,
+      "locationId": 3
+    },
+    {
+      "name": "Baxtor",
+      "phoneNumber": "893-242-9287",
+      "id": 10,
+      "locationId": 2
+    },
+    {
+      "name": "Harvey",
+      "phoneNumber": "444-444-4444",
+      "locationId": 6,
+      "id": 11
+    },
+    {
+      "id": 12,
+      "name": "Ray",
+      "phoneNumber": "444-444-4444",
+      "locationId": 2
+    },
+    {
+      "name": "Bambi",
+      "phoneNumber": "444-444-4444",
+      "locationId": 1,
+      "id": 13
     }
   ],
   "locations": [
@@ -120,12 +160,12 @@
     },
     {
       "id": 2,
-      "name": "Ride or Die ",
+      "name": "Ride or Die",
       "address": "5555 Songbird Way"
     },
     {
       "id": 3,
-      "name": "Aquiver ",
+      "name": "Aquiver",
       "address": "223 Yellow River Drive"
     },
     {

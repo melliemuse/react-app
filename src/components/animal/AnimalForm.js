@@ -28,9 +28,9 @@ class AnimalForm extends Component {
             const animal = {
                 name: this.state.animalName,
                 breed: this.state.breed,
-                employeeId: this.state.employeeId
+                employeeId: Number(this.state.employeeId)
             };
-
+            console.log(animal)
             // Create the animal and redirect user to animal list
             APIManager.post("animals", animal)
                 .then(() => this.props.history.push("/animals"));
@@ -79,7 +79,7 @@ class AnimalForm extends Component {
                             onChange={this.handleFieldChange}
                             >
                                 {this.state.employees.map(employee =>
-                                <option key={employee.id} value={employee.name}>{employee.name}</option>
+                                <option key={employee.id} value={employee.id}>{employee.name}</option>
                             )}
                             </select>
 
