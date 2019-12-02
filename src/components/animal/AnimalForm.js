@@ -6,6 +6,8 @@ class AnimalForm extends Component {
     state = {
         animalName: "",
         breed: "",
+        employeeId: "",
+        employees: [],
         loadingStatus: false,
     };
 
@@ -26,6 +28,7 @@ class AnimalForm extends Component {
             const animal = {
                 name: this.state.animalName,
                 breed: this.state.breed,
+                employeeId: this.state.employeeId
             };
 
             // Create the animal and redirect user to animal list
@@ -33,6 +36,17 @@ class AnimalForm extends Component {
                 .then(() => this.props.history.push("/animals"));
         }
     };
+
+    componentDidMount() {
+        APIManager.getAll("employees")
+        .then(employees => {
+            console.log(employees)
+            this.setState({
+                employees: employees,
+            }
+            )
+        })
+    }
 
     render() {
 
@@ -44,6 +58,7 @@ class AnimalForm extends Component {
                             <input
                                 type="text"
                                 required
+                                className="form-control"
                                 onChange={this.handleFieldChange}
                                 id="animalName"
                                 placeholder="Animal name"
@@ -53,10 +68,21 @@ class AnimalForm extends Component {
                                 type="text"
                                 required
                                 onChange={this.handleFieldChange}
+                                className="form-control"
                                 id="breed"
                                 placeholder="Breed"
                             />
                             <label htmlFor="breed">Breed</label>
+                            <select
+                            className="form-control"
+                            id="employeeId"
+                            onChange={this.handleFieldChange}
+                            >
+                                {this.state.employees.map(employee =>
+                                <option key={employee.id} value={employee.name}>{employee.name}</option>
+                            )}
+                            </select>
+
                         </div>
                         <div className="alignRight">
                             <button

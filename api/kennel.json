@@ -33,12 +33,20 @@
     {
       "name": "Samuel",
       "breed": "Pony",
-      "id": 10
+      "id": 10,
+      "employeeId": 6
     },
     {
       "name": "Bojack Horseman",
       "breed": "Horse",
-      "id": 11
+      "id": 11,
+      "employeeId": 8
+    },
+    {
+      "name": "Dogsnout Wonderpooch",
+      "breed": "Terrier Beagle Mix",
+      "employeeId": "Jack Skellington",
+      "id": 12
     }
   ],
   "owners": [
